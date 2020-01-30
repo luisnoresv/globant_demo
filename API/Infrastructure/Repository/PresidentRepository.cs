@@ -16,7 +16,8 @@ namespace API.Infrastructure.Repository
         {
             try
             {
-                using (var reader = new StreamReader("../API/Persistence/Data/Presidents.csv", Encoding.Default))
+                var repositoryPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Presidents.csv");
+                using (var reader = new StreamReader(repositoryPath, Encoding.Default))
                 {
                     using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
                     {
