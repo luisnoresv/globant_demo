@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Segment, Header, Table, Icon } from 'semantic-ui-react';
+import { Segment, Header, Table, Icon, Popup } from 'semantic-ui-react';
 import { toast } from 'react-toastify';
 import ApiService from '../../app/api/apiService';
 import LoadingComponent from '../../app/layout/LoadingComponent';
@@ -44,9 +44,18 @@ const PresidentsList = () => {
           <Table.Row>
             <Table.HeaderCell>
               President{' '}
-              <Icon
-                name={order === 'ASC' ? 'angle down' : 'angle up'}
-                onClick={handleSorting}
+              <Popup
+                trigger={
+                  // eslint-disable-next-line react/jsx-wrap-multilines
+                  <Icon
+                    name={order === 'ASC' ? 'angle down' : 'angle up'}
+                    onClick={handleSorting}
+                  />
+                }
+                content={
+                  order === 'ASC' ? 'Order by descending' : 'Order by ascending'
+                }
+                inverted
               />
             </Table.HeaderCell>
             <Table.HeaderCell>Birthday</Table.HeaderCell>
