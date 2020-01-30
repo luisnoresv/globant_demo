@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/layout/App';
+import 'react-toastify/dist/ReactToastify.min.css';
 import * as serviceWorker from './serviceWorker';
 
 // eslint-disable-next-line no-undef

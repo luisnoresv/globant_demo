@@ -1,7 +1,7 @@
 import request from './http';
 
 const ApiService = {
-  get: () => request.get('/presidents/')
+  get: order => request.get('/presidents', order)
 };
 
 export default ApiService;
